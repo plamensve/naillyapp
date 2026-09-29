@@ -150,19 +150,12 @@ button{font:inherit}
 .feature-gallery{display:grid;gap:36px}
 .editorial-card{border-radius:34px;overflow:hidden;background:#fff;color:var(--ink);box-shadow:0 30px 90px rgba(0,0,0,.2)}
 .card-red{margin-left:15%;}.card-ink{margin-right:11%}
-.editorial-art{height:500px;display:flex;justify-content:center;align-items:center;gap:13px;position:relative;overflow:hidden}
-.editorial-art:before,.editorial-art:after{content:"";position:absolute;border-radius:50%;filter:blur(40px)}
-.art-pearl{background:linear-gradient(145deg,#dccbc5,#f5efeb)}
-.art-pearl:before{width:250px;height:250px;background:rgba(255,255,255,.55);left:0;top:20px}
-.art-red{background:linear-gradient(145deg,#8e2330,#e98683)}
-.art-red:after{width:220px;height:220px;background:rgba(255,194,186,.35);right:0;bottom:0}
-.art-ink{background:linear-gradient(145deg,#1e1820,#735463)}
-.art-ink:before{width:260px;height:260px;background:rgba(255,187,193,.15);left:20%;top:5%}
-.editorial-art span{width:42px;height:145px;border-radius:25px 25px 14px 14px;z-index:2;box-shadow:0 15px 30px rgba(0,0,0,.12),inset 0 0 0 1px rgba(255,255,255,.25);transform:translateY(var(--y,0)) rotate(var(--r,0))}
-.editorial-art span:nth-child(1){--r:-18deg;--y:25px;height:128px}.editorial-art span:nth-child(2){--r:-7deg;--y:2px}.editorial-art span:nth-child(3){height:155px}.editorial-art span:nth-child(4){--r:7deg;--y:2px}.editorial-art span:nth-child(5){--r:18deg;--y:25px;height:128px}
-.art-pearl span{background:linear-gradient(180deg,#fffaf8,#dfd4d0)}
-.art-red span{background:linear-gradient(180deg,#fe7774,#a71931)}
-.art-ink span{background:linear-gradient(180deg,#39212d,#120b10);box-shadow:0 15px 30px rgba(0,0,0,.25),inset 0 0 0 1px rgba(255,255,255,.1)}
+.editorial-art{height:500px;position:relative;overflow:hidden;background:#eadfd9}
+.editorial-art img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .75s cubic-bezier(.2,.7,.2,1),filter .45s ease;filter:saturate(.92) contrast(1.02)}
+.editorial-card:hover .editorial-art img{transform:scale(1.035);filter:saturate(1) contrast(1.03)}
+.card-pearl .editorial-art img{object-position:center 48%}
+.card-red .editorial-art img{object-position:center 50%}
+.card-ink .editorial-art img{object-position:center 47%}
 .editorial-caption{padding:19px 22px 22px;display:flex;justify-content:space-between;align-items:center}
 .editorial-caption small{font-size:8px;color:var(--muted);letter-spacing:.12em}.editorial-caption strong{display:block;font-family:var(--serif);font-size:24px;font-weight:500;margin-top:4px}
 .editorial-caption>span{font-size:26px}
