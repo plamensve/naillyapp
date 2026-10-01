@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#fffaf7">
-  <title>Email confirmed — Nailly</title>
+  <title>Nailly account link</title>
   <link rel="stylesheet" href="../../styles.css">
   <style>
     body{min-height:100vh;display:grid;place-items:center;padding:24px}
@@ -44,9 +44,18 @@
     const params = new URLSearchParams(hash.startsWith('#') ? hash.slice(1) : hash);
     const query = new URLSearchParams(search);
     const error = query.get('error_description') || query.get('error') || params.get('error_description') || params.get('error');
+    const type = query.get('type') || params.get('type');
 
     const openApp = document.getElementById('open-app');
     openApp.href = 'nailly://auth/callback' + search + hash;
+
+    if (type === 'recovery' && !error) {
+      document.title = 'Reset your password — Nailly';
+      document.getElementById('icon').textContent = '✦';
+      document.getElementById('title').textContent = 'Password reset';
+      document.getElementById('message').textContent = 'Your secure recovery link is ready. Open Nailly to choose a new password.';
+      openApp.textContent = 'Open Nailly to reset password';
+    }
 
     if (error) {
       const card = document.getElementById('card');
