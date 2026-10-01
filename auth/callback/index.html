@@ -49,6 +49,12 @@
     const openApp = document.getElementById('open-app');
     openApp.href = 'nailly://auth/callback' + search + hash;
 
+    // Bridge the verified HTTPS callback back into the installed mobile app.
+    // Keep the query/hash because Supabase may return a PKCE code or recovery tokens there.
+    if (!error) {
+      setTimeout(() => { window.location.href = openApp.href; }, 150);
+    }
+
     if (type === 'recovery' && !error) {
       document.title = 'Reset your password — Nailly';
       document.getElementById('icon').textContent = '✦';
